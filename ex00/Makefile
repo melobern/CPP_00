@@ -12,7 +12,7 @@
 
 G = g++
 NAME = megaphone
-CFLAGS = -Wall -Wextra -Werror -MMD -MP -g3 std=c++98
+CFLAGS = -Wall -Wextra -Werror -MMD -MP -g3 -std=c++98
 MKDIR = mkdir -p
 RMDIR = rm -rf
 
