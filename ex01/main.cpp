@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 11:03:25 by mbernard          #+#    #+#             */
-/*   Updated: 2024/07/25 15:29:20 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/07/25 18:17:23 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(void)
 			continue ;
 		if (input == "ADD")
 			phonebook.addContact();
-		else if (input == "SHOW")
+		else if (input == "SEARCH")
 			phonebook.displayContact();
 		else if (input == "EXIT")
 			break ;
