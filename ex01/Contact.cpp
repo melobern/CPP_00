@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 08:44:17 by mbernard          #+#    #+#             */
-/*   Updated: 2024/07/25 15:22:37 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/07/25 17:09:01 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,20 +55,126 @@ std::string	Contact::getSecret(void) const
 void	Contact::setFirstname(void)
 {
 
+	std::string	input;
+
+	while (true)
+	{
+		std::cout << "Enter first name : ";
+		std::getline(std::cin, input);
+		if (std::cin.eof())
+		{
+			std::cout << std::endl << "Reached the End-of-File (Ctrl + D). Exiting..." << std::endl;
+			break ;
+		}
+		if (input.empty())
+			continue ;
+		this->m_firstname = input;
+		break ;
+	}
 }
+
+static bool is_full_digits(std::string str)
+{
+	int	x = 0;
+
+	while (str[x])
+	{
+		if (!std::isdigit(str[x]))
+		{
+			std::cout << "Sorry, the phone must contains digits only." << std::endl;
+			return (0);
+		}
+		x++;
+	}
+	return (1);
+}
+
 void	Contact::setLastname(void)
 {
+	std::string	input;
 
+	while (true)
+	{
+		std::cout << "Enter last name : ";
+		std::getline(std::cin, input);
+		if (std::cin.eof())
+		{
+			std::cout << std::endl << "Reached the End-of-File (Ctrl + D). Exiting..." << std::endl;
+			break ;
+		}
+		if (input.empty())
+			continue ;
+		this->m_lastname = input;
+		break ;
+	}
 }
+
 void	Contact::setNickname(void)
 {
+	std::string	input;
 
+	while (true)
+	{
+		std::cout << "Enter nickname : ";
+		std::getline(std::cin, input);
+		if (std::cin.eof())
+		{
+			std::cout << std::endl << "Reached the End-of-File (Ctrl + D). Exiting..." << std::endl;
+			break ;
+		}
+		if (input.empty())
+			continue ;
+		this->m_nickname = input;
+		break ;
+	}
 }
+
 void	Contact::setPhone(void)
 {
+	std::string	input;
+	size_t		input_len;
 
+	while (true)
+	{
+		std::cout << "Enter phone number : ";
+		std::getline(std::cin, input);
+		if (std::cin.eof())
+		{
+			std::cout << std::endl << "Reached the End-of-File (Ctrl + D). Exiting..." << std::endl;
+			break ;
+		}
+		if (input.empty())
+			continue ;
+		if (!is_full_digits(input))
+			continue;
+		input_len = input.length();
+		if (input_len < 8 || input_len > 10)
+		{
+			std::cout << "Sorry, the phone must contains 8 digits." << std::endl;
+			continue;
+		}
+		this->m_phone = input;
+		break ;
+	}
 }
+
 void	Contact::setSecret(void)
 {
+	std::string	input;
+
+	while (true)
+	{
+		std::cout << "Enter darkest secret : ";
+		std::getline(std::cin, input);
+		if (std::cin.eof())
+		{
+			std::cout << std::endl << "Reached the End-of-File (Ctrl + D). Exiting..." << std::endl;
+			break ;
+		}
+		if (input.empty())
+			continue ;
+		this->m_secret = input;
+		break ;
+	}
 
 }
