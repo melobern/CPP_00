@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 08:43:15 by mbernard          #+#    #+#             */
-/*   Updated: 2024/07/25 13:10:25 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/07/25 15:23:25 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ class Contact
 		void	setPhone(void);
 		void	setSecret(void);
 		/*	GETTERS		*/
-		void	getFirstname(void) const;
-		void	getLastname(void) const;
-		void	getNickname(void) const;
-		void	getPhone(void) const;
-		void	getSecret(void) const;
+		std::string	getFirstname(void) const;
+		std::string	getLastname(void) const;
+		std::string	getNickname(void) const;
+		std::string	getPhone(void) const;
+		std::string	getSecret(void) const;
 	private:
 		std::string	m_firstname;
 		std::string	m_lastname;

@@ -6,13 +6,14 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 08:44:17 by mbernard          #+#    #+#             */
-/*   Updated: 2024/07/25 14:00:26 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/07/25 15:22:37 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
 /*	CONSTRUCTOR && DESTRUCTOR	*/
+
 Contact::Contact(void)
 	: m_firstname(""), m_lastname(""), m_nickname(""), m_phone(""), m_secret("")
 {
@@ -25,30 +26,32 @@ Contact::~Contact(void)
 }
 
 /*	GETTERS				*/
-void	Contact::getFirstname(void)
+
+std::string	Contact::getFirstname(void) const
 {
 	return (this->m_firstname);
 }
-void	Contact::getLastname(void)
+std::string	Contact::getLastname(void) const
 {
 	return (this->m_lastname);
 }
 
-void	Contact::getNickname(void)
+std::string	Contact::getNickname(void) const
 {
 	return (this->m_nickname);
 }
 
-void	Contact::getPhone(void)
+std::string	Contact::getPhone(void) const
 {
 	return (this->m_phone);
 }
-void	Contact::getSecret(void)
+std::string	Contact::getSecret(void) const
 {
 	return (this->m_secret);
 }
 
 /*	SETTERS				*/
+
 void	Contact::setFirstname(void)
 {
 

@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 08:43:15 by mbernard          #+#    #+#             */
-/*   Updated: 2024/07/25 13:14:36 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/07/25 14:21:24 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,10 @@ class PhoneBook
 	private:
 		Contact d_contacts[8];
 		int	d_count;
-		void	searchContact(void);
+		void	private_searchContact(void);
+		void	private_replaceContact(void);
+		void	private_displayTable(void);
+		void	private_displayContactDetails(void);
 };
 
 #endif
