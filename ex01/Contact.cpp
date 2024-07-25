@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 08:44:17 by mbernard          #+#    #+#             */
-/*   Updated: 2024/07/25 17:09:01 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/07/25 17:38:29 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,40 @@ std::string	Contact::getSecret(void) const
 	return (this->m_secret);
 }
 
+/*	STATIC BOOL CHECKERS		*/
+
+static bool is_full_digits(std::string str)
+{
+	int	x = 0;
+
+	while (str[x])
+	{
+		if (!std::isdigit(str[x]))
+		{
+			std::cout << "Sorry, the phone must contains digits only." << std::endl;
+			return (0);
+		}
+		x++;
+	}
+	return (1);
+}
+
+static bool is_full_letters(std::string str, std::string label)
+{
+	int	x = 0;
+
+	while (str[x])
+	{
+		if (!std::isalpha(str[x]))
+		{
+			std::cout << "Sorry, the " << label << " must contains letters only." << std::endl;
+			return (0);
+		}
+		x++;
+	}
+	return (1);
+}
+
 /*	SETTERS				*/
 
 void	Contact::setFirstname(void)
@@ -68,25 +102,11 @@ void	Contact::setFirstname(void)
 		}
 		if (input.empty())
 			continue ;
+		if (!is_full_letters(input, "First Name"))
+			continue;
 		this->m_firstname = input;
 		break ;
 	}
-}
-
-static bool is_full_digits(std::string str)
-{
-	int	x = 0;
-
-	while (str[x])
-	{
-		if (!std::isdigit(str[x]))
-		{
-			std::cout << "Sorry, the phone must contains digits only." << std::endl;
-			return (0);
-		}
-		x++;
-	}
-	return (1);
 }
 
 void	Contact::setLastname(void)
@@ -104,6 +124,8 @@ void	Contact::setLastname(void)
 		}
 		if (input.empty())
 			continue ;
+		if (!is_full_letters(input, "Last Name"))
+			continue;
 		this->m_lastname = input;
 		break ;
 	}
@@ -148,9 +170,9 @@ void	Contact::setPhone(void)
 		if (!is_full_digits(input))
 			continue;
 		input_len = input.length();
-		if (input_len < 8 || input_len > 10)
+		if (!(input_len == 8 || input_len == 10))
 		{
-			std::cout << "Sorry, the phone must contains 8 digits." << std::endl;
+			std::cout << "Sorry, the phone must contains 8 or 10 digits." << std::endl;
 			continue;
 		}
 		this->m_phone = input;
