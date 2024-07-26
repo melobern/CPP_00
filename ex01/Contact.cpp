@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 08:44:17 by mbernard          #+#    #+#             */
-/*   Updated: 2024/07/26 22:40:52 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/07/26 22:52:44 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,11 @@ static bool is_full_digits(std::string str)
 
 	while (str[x])
 	{
+		if (x > 9)
+		{
+			std::cout << "Sorry, the phone number must contains 8 or 10 digits." << std::endl;
+			return (0);
+		}
 		if (!std::isdigit(str[x]))
 		{
 			std::cout << "Sorry, this field must contains digits only." << std::endl;
