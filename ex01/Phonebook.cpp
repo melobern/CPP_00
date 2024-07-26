@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 08:44:17 by mbernard          #+#    #+#             */
-/*   Updated: 2024/07/25 18:26:27 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/07/26 20:00:05 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,40 @@ void	PhoneBook::addContact(void)
 	this->has_contacts = true;
 }
 
+void	Phonebook::private_searchContact(int index)
+{
+/*
+ * Ensuite, le programme demande à l’utilisateur d’entrer l’index du contact à af-
+ * ficher. Si l’index ou son format sont incorrects, gérez cela de manière pertinente.
+ * Sinon, affichez les informations du contact, une par ligne.
+*/
+	std::string	input;
+	int		chosen_index;
+	size_t		input_len = 0;
+
+	while (true)
+	{
+		std::cout << "Chose the number of the contact to show :";
+		std::getline(std::cin, input);
+		if (std::cin.eof())
+		{
+			std::cout << std::endl << "Reached the End-of-File (Ctrl + D). Exiting..." << std::endl;
+			break ;
+		}
+		input_len = input.lenght();
+		if (input_len != 1)
+			std::cout << "Please enter a number between 1 and " << index + 1;
+		if (!is_full_digits(input))
+			continue;
+		else
+			break ;
+	}
+	index_chosen = std::
+}
+
 void	PhoneBook::private_displayTable(void)
 {
-	int	x = 0;
-
-	// FAIRE LE TABLEAU DEMANDÉ !
+	int		index = 0;
 	/*
 	 * SEARCH : affiche le contact demandé
 ◦ Affiche les contacts enregistrés sous la forme d’une liste de 4 colonnes : index,
@@ -51,21 +80,20 @@ first name, last name et nickname.
 par un pipe (’|’). Leur texte est aligné à droite. Si le texte dépasse la largeur
 de la colonne, il faut le tronquer et remplacer le dernier caractère affiché par
 un point (’.’).
-◦ Ensuite, le programme demande à l’utilisateur d’entrer l’index du contact à af-
-ficher. Si l’index ou son format sont incorrects, gérez cela de manière pertinente.
-Sinon, affichez les informations du contact, une par ligne.
 	*/
-	while (x < 8)
+	while (index < 8)
 	{
-		if (this->d_contacts[x].getFirstname() == "")
+		if (this->d_contacts[index].getFirstname() == "")
 			break ;
-		std::cout << "FIRST NAME === " << this->d_contacts[x].getFirstname() << std::endl;
-		std::cout << "LAST NAME === " << this->d_contacts[x].getLastname() << std::endl;
-		std::cout << "NICKNAME === " << this->d_contacts[x].getNickname() << std::endl;
-		std::cout << "PHONE === " << this->d_contacts[x].getPhone() << std::endl;
-		std::cout << "DARK SECRET === " << this->d_contacts[x].getSecret() << std::endl;
-		x++;
+		std::cout << "|" << index + 1;
+		std::cout << "|" << this->d_contacts[index].getFirstname();
+		std::cout << "|" << this->d_contacts[index].getLastname();
+		std::cout << "|" << this->d_contacts[index].getNickname() << "|" << std::endl;
+//		std::cout << "PHONE === " << this->d_contacts[x].getPhone() << std::endl;
+//		std::cout << "DARK SECRET === " << this->d_contacts[x].getSecret() << std::endl;
+		index++;
 	}
+	this->private_searchContact(index);
 }
 
 void	PhoneBook::private_displayContactDetails(void)

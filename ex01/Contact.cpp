@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 08:44:17 by mbernard          #+#    #+#             */
-/*   Updated: 2024/07/25 17:38:29 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/07/26 19:43:40 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ std::string	Contact::getSecret(void) const
 
 /*	STATIC BOOL CHECKERS		*/
 
-static bool is_full_digits(std::string str)
+bool is_full_digits(std::string str)
 {
 	int	x = 0;
 
@@ -60,7 +60,7 @@ static bool is_full_digits(std::string str)
 	{
 		if (!std::isdigit(str[x]))
 		{
-			std::cout << "Sorry, the phone must contains digits only." << std::endl;
+			std::cout << "Sorry, this field must contains digits only." << std::endl;
 			return (0);
 		}
 		x++;

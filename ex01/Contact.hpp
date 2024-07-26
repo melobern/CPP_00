@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 08:43:15 by mbernard          #+#    #+#             */
-/*   Updated: 2024/07/25 18:23:42 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/07/26 19:41:04 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,6 @@ class Contact
 		std::string	m_secret;
 };
 
+
+bool	is_full_digits(std::string str);
 #endif
