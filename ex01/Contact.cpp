@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 08:44:17 by mbernard          #+#    #+#             */
-/*   Updated: 2024/07/26 19:43:40 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/07/26 22:40:52 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ std::string	Contact::getSecret(void) const
 
 /*	STATIC BOOL CHECKERS		*/
 
-bool is_full_digits(std::string str)
+static bool is_full_digits(std::string str)
 {
 	int	x = 0;
 
@@ -98,7 +98,7 @@ void	Contact::setFirstname(void)
 		if (std::cin.eof())
 		{
 			std::cout << std::endl << "Reached the End-of-File (Ctrl + D). Exiting..." << std::endl;
-			break ;
+			exit(0);
 		}
 		if (input.empty())
 			continue ;
@@ -120,7 +120,7 @@ void	Contact::setLastname(void)
 		if (std::cin.eof())
 		{
 			std::cout << std::endl << "Reached the End-of-File (Ctrl + D). Exiting..." << std::endl;
-			break ;
+			exit(0);
 		}
 		if (input.empty())
 			continue ;
@@ -142,7 +142,7 @@ void	Contact::setNickname(void)
 		if (std::cin.eof())
 		{
 			std::cout << std::endl << "Reached the End-of-File (Ctrl + D). Exiting..." << std::endl;
-			break ;
+			exit(0);
 		}
 		if (input.empty())
 			continue ;
@@ -163,7 +163,7 @@ void	Contact::setPhone(void)
 		if (std::cin.eof())
 		{
 			std::cout << std::endl << "Reached the End-of-File (Ctrl + D). Exiting..." << std::endl;
-			break ;
+			exit(0);
 		}
 		if (input.empty())
 			continue ;
@@ -191,7 +191,7 @@ void	Contact::setSecret(void)
 		if (std::cin.eof())
 		{
 			std::cout << std::endl << "Reached the End-of-File (Ctrl + D). Exiting..." << std::endl;
-			break ;
+			exit(0);
 		}
 		if (input.empty())
 			continue ;
