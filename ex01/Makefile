@@ -6,13 +6,13 @@
 #    By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/21 13:44:15 by mbernard          #+#    #+#              #
-#    Updated: 2024/07/25 13:09:37 by mbernard         ###   ########.fr        #
+#    Updated: 2024/07/27 13:06:46 by mbernard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 G = g++
 NAME = phonebook
-CFLAGS = -Wall -Wextra -Werror -MMD -MP -g3 -std=c++98
+CFLAGS = -Wall -Wextra -Werror -MMD -MP -std=c++98
 MKDIR = mkdir -p
 RMDIR = rm -rf
 
@@ -21,7 +21,8 @@ HEADERS_LIST = Phonebook Contact
 SRCS = main Phonebook Contact 
 
 # ---------------------------------- Repertories ----------------------------- #
-HEADERS_DIR = ./
+HEADERS_DIR = includes/
+SRC_DIR = src/
 OBJS_DIR = .objs/
 OBJS = $(addprefix ${OBJS_DIR}, $(addsuffix .o, ${SRCS}))
 HEADERS = $(addprefix ${HEADERS_DIR}, $(addsuffix .hpp, ${HEADERS_LIST}))
@@ -34,7 +35,7 @@ all: ${NAME} ${OBJS} | ${OBJS_DIR} Makefile
 ${NAME}: ${OBJS} Makefile
 	${G} ${CFLAGS} ${OBJS} ${INCLUDES} ${LIBFT} -o $@
 
-${OBJS_DIR}%.o: ${SRCS_DIR}%.cpp ${HEADERS} Makefile | ${OBJS_DIR}
+${OBJS_DIR}%.o: ${SRC_DIR}%.cpp ${HEADERS} Makefile | ${OBJS_DIR}
 	${G} ${CFLAGS} ${INCLUDES} -c $< -o $@
 
 -include ${DEPS}
