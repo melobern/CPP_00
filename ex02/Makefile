@@ -6,12 +6,12 @@
 #    By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/21 13:44:15 by mbernard          #+#    #+#              #
-#    Updated: 2024/07/27 13:56:53 by mbernard         ###   ########.fr        #
+#    Updated: 2024/07/27 17:44:55 by mbernard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 G = g++
-NAME = phonebook
+NAME = account
 CFLAGS = -Wall -Wextra -Werror -MMD -MP -std=c++98
 MKDIR = mkdir -p
 RMDIR = rm -rf
@@ -21,8 +21,6 @@ HEADER = Account.hpp
 SRCS = Account tests 
 
 # ---------------------------------- Repertories ----------------------------- #
-HEADERS_DIR = includes/
-SRC_DIR = src/
 OBJS_DIR = .objs/
 OBJS = $(addprefix ${OBJS_DIR}, $(addsuffix .o, ${SRCS}))
 DEPS = ${OBJS:.o=.d}
