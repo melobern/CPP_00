@@ -6,7 +6,7 @@
 #    By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/21 13:44:15 by mbernard          #+#    #+#              #
-#    Updated: 2024/07/27 13:06:46 by mbernard         ###   ########.fr        #
+#    Updated: 2024/07/27 13:57:08 by mbernard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ DEPS = ${OBJS:.o=.d}
 all: ${NAME} ${OBJS} | ${OBJS_DIR} Makefile
 
 ${NAME}: ${OBJS} Makefile
-	${G} ${CFLAGS} ${OBJS} ${INCLUDES} ${LIBFT} -o $@
+	${G} ${CFLAGS} ${OBJS} ${INCLUDES} -o $@
 
 ${OBJS_DIR}%.o: ${SRC_DIR}%.cpp ${HEADERS} Makefile | ${OBJS_DIR}
 	${G} ${CFLAGS} ${INCLUDES} -c $< -o $@
