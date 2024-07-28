@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 08:44:17 by mbernard          #+#    #+#             */
-/*   Updated: 2024/07/27 19:53:39 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/07/28 16:33:28 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ std::string    Contact::getSecret(void) const {
 
 /*    STATIC BOOL CHECKERS        */
 
-static bool is_full_digits(std::string str) {
+bool   Contact::is_full_digits(std::string str) {
     int    x = 0;
 
     while (str[x]) {
@@ -68,7 +68,7 @@ static bool is_full_digits(std::string str) {
     return (1);
 }
 
-static bool is_full_letters(std::string str, std::string label) {
+bool    Contact::is_full_letters(std::string str, std::string label) {
     int    x = 0;
 
     while (str[x]) {

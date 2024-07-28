@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 08:43:15 by mbernard          #+#    #+#             */
-/*   Updated: 2024/07/27 19:05:15 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/07/28 16:32:51 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ class Contact {
         std::string    m_nickname;
         std::string    m_phone;
         std::string    m_secret;
+        bool           is_full_letters(std::string str, std::string label);
+        bool           is_full_digits(std::string str);
 };
 
 #endif  // EX01_INCLUDES_CONTACT_HPP_
