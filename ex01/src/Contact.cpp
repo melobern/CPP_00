@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 08:44:17 by mbernard          #+#    #+#             */
-/*   Updated: 2024/07/28 16:33:28 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/07/28 16:44:55 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ std::string    Contact::getSecret(void) const {
     return (this->m_secret);
 }
 
-/*    STATIC BOOL CHECKERS        */
+/*    BOOL CHECKERS        */
 
 bool   Contact::is_full_digits(std::string str) {
     int    x = 0;
